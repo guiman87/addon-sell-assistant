@@ -16,6 +16,7 @@ ports:
 webui: "http://[HOST]:[PORT:3000]"
 panel_icon: mdi:tag-multiple
 panel_title: "Sell Assistant"
+image: "icon.png"
 options:
   google_client_email: ""
   google_private_key: ""
