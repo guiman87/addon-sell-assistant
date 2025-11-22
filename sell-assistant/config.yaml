@@ -13,6 +13,10 @@ map: []
 services: []
 ports:
   3000/tcp: 3000
+webui: "http://[HOST]:[PORT:3000]"
+ingress: true
+ingress_port: 3000
+panel_icon: mdi:tag-multiple
 options:
   google_client_email: ""
   google_private_key: ""
