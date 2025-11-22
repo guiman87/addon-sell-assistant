@@ -39,6 +39,16 @@ mkdir -p "$UPLOAD_DIR"
 echo "UPLOAD_DIR=${UPLOAD_DIR}" >> .env.local
 bashio::log.info "Using persistent upload directory: ${UPLOAD_DIR}"
 
+# Debug: List available models
+bashio::log.info "Checking available Gemini models..."
+curl -s "https://generativelanguage.googleapis.com/v1beta/models?key=${GEMINI_API_KEY}" > /tmp/models.json
+if [ -s /tmp/models.json ]; then
+    cat /tmp/models.json | grep "\"name\": \"models/gemini" || bashio::log.warning "Could not parse models list"
+    cat /tmp/models.json # Print full output if grep fails or just to be safe in logs
+else
+    bashio::log.error "Failed to fetch models list"
+fi
+
 # Install dependencies
 bashio::log.info "Installing dependencies..."
 npm install
