@@ -33,6 +33,12 @@ echo "GOOGLE_SPREADSHEET_ID=${GOOGLE_SPREADSHEET_ID}" >> .env.local
 echo "GOOGLE_DRIVE_FOLDER_ID=${GOOGLE_DRIVE_FOLDER_ID}" >> .env.local
 echo "GEMINI_API_KEY=${GEMINI_API_KEY}" >> .env.local
 
+# Set up persistent upload directory
+UPLOAD_DIR="/data/uploads"
+mkdir -p "$UPLOAD_DIR"
+echo "UPLOAD_DIR=${UPLOAD_DIR}" >> .env.local
+bashio::log.info "Using persistent upload directory: ${UPLOAD_DIR}"
+
 # Install dependencies
 bashio::log.info "Installing dependencies..."
 npm install
