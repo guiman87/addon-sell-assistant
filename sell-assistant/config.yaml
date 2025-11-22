@@ -1,0 +1,29 @@
+name: "Sell Assistant"
+version: "1.0.0"
+init: false
+slug: "sell-assistant"
+description: "AI-powered assistant for selling used items. Upload photos, use voice descriptions, and export to Google Sheets."
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+map: []
+services: []
+ports:
+  3000/tcp: 3000
+options:
+  google_client_email: ""
+  google_private_key: ""
+  google_spreadsheet_id: ""
+  google_drive_folder_id: ""
+  gemini_api_key: ""
+  repository_url: "https://github.com/guiman87/sell-assistant.git"
+schema:
+  google_client_email: str
+  google_private_key: password
+  google_spreadsheet_id: str
+  google_drive_folder_id: str
+  gemini_api_key: password
+  repository_url: str

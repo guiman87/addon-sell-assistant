@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Sell Assistant - AI-powered selling helper
+url: 'https://github.com/guiman87/addon-sell-assistant'
+maintainer: Guillermo Dutra <guiman.uy@gmail.com>
