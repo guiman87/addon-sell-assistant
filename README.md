@@ -1,4 +1,7 @@
 # Sell Assistant - Home Assistant Add-On
+![Addon Icon](icon.png)
+![Banner](banner.png)
+![UI Mockup](screenshot.png)
 
 Sell Assistant es un addon de Home Assistant que te ayuda a vender artículos usados más rápido usando IA.
 
