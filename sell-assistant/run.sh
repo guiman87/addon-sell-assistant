@@ -18,14 +18,7 @@ if [ -z "${REPOSITORY_URL}" ]; then
   exit 1
 fi
 
-# Clone the repository
-bashio::log.info "Cloning repository from ${REPOSITORY_URL}..."
-git clone "${REPOSITORY_URL}" /app/repo
-
-# Navigate to the app directory
-cd /app/repo
-
-# Set ingress base path if available
+# Set ingress base path if available - MUST be set before build
 INGRESS_ENTRY=$(bashio::addon.ingress_entry || echo "")
 if [ -n "${INGRESS_ENTRY}" ]; then
     export NEXT_PUBLIC_BASE_PATH="${INGRESS_ENTRY}"
@@ -34,6 +27,13 @@ else
     export NEXT_PUBLIC_BASE_PATH=""
     bashio::log.info "Running without ingress (direct port access)"
 fi
+
+# Clone the repository
+bashio::log.info "Cloning repository from ${REPOSITORY_URL}..."
+git clone "${REPOSITORY_URL}" /app/repo
+
+# Navigate to the app directory
+cd /app/repo
 
 # Create .env.local file from variables
 bashio::log.info "Creating .env.local file..."
