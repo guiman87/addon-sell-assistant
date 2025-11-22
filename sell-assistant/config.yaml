@@ -1,5 +1,5 @@
 name: "Sell Assistant"
-version: "1.0.9"
+version: "1.0.10"
 init: false
 slug: "sell-assistant"
 description: "AI-powered assistant for selling used items. Upload photos, use voice descriptions, and export to Google Sheets."
