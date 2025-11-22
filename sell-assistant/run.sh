@@ -10,6 +10,7 @@ GOOGLE_PRIVATE_KEY=$(bashio::config 'google_private_key')
 GOOGLE_SPREADSHEET_ID=$(bashio::config 'google_spreadsheet_id')
 GOOGLE_DRIVE_FOLDER_ID=$(bashio::config 'google_drive_folder_id')
 GEMINI_API_KEY=$(bashio::config 'gemini_api_key')
+EXTERNAL_URL=$(bashio::config 'external_url')
 REPOSITORY_URL=$(bashio::config 'repository_url')
 
 # Check if REPOSITORY_URL is provided
@@ -33,6 +34,7 @@ GOOGLE_PRIVATE_KEY="${GOOGLE_PRIVATE_KEY}"
 GOOGLE_SPREADSHEET_ID="${GOOGLE_SPREADSHEET_ID}"
 GOOGLE_DRIVE_FOLDER_ID="${GOOGLE_DRIVE_FOLDER_ID}"
 GEMINI_API_KEY="${GEMINI_API_KEY}"
+NEXT_PUBLIC_BASE_URL="${EXTERNAL_URL}"
 EOF
 
 # Set up persistent upload directory

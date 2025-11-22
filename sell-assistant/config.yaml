@@ -1,5 +1,5 @@
 name: "Sell Assistant"
-version: "1.0.20"
+version: "1.0.22"
 init: false
 slug: "sell-assistant"
 description: "AI-powered assistant for selling used items. Upload photos, use voice descriptions, and export to Google Sheets."
@@ -23,6 +23,7 @@ options:
   google_spreadsheet_id: ""
   google_drive_folder_id: ""
   gemini_api_key: ""
+  external_url: ""
   repository_url: "https://github.com/guiman87/sell-assistant.git"
 schema:
   google_client_email: str
@@ -30,4 +31,5 @@ schema:
   google_spreadsheet_id: str
   google_drive_folder_id: str
   gemini_api_key: password
+  external_url: str
   repository_url: str
