@@ -1,5 +1,5 @@
 name: "Sell Assistant"
-version: "1.0.5"
+version: "1.0.6"
 init: false
 slug: "sell-assistant"
 description: "AI-powered assistant for selling used items. Upload photos, use voice descriptions, and export to Google Sheets."
@@ -13,8 +13,7 @@ map: []
 services: []
 ports:
   3000/tcp: 3000
-ingress: true
-ingress_port: 3000
+webui: "http://[HOST]:3000"
 panel_icon: mdi:tag-multiple
 options:
   google_client_email: ""
