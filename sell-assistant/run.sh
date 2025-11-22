@@ -27,12 +27,13 @@ cd /app/repo
 
 # Create .env.local file from variables
 bashio::log.info "Creating .env.local file..."
-echo "GOOGLE_CLIENT_EMAIL=\"${GOOGLE_CLIENT_EMAIL}\"" > .env.local
-# Ensure newlines in private key are correctly handled
-echo "GOOGLE_PRIVATE_KEY=\"${GOOGLE_PRIVATE_KEY}\"" >> .env.local
-echo "GOOGLE_SPREADSHEET_ID=\"${GOOGLE_SPREADSHEET_ID}\"" >> .env.local
-echo "GOOGLE_DRIVE_FOLDER_ID=\"${GOOGLE_DRIVE_FOLDER_ID}\"" >> .env.local
-echo "GEMINI_API_KEY=\"${GEMINI_API_KEY}\"" >> .env.local
+cat <<EOF > .env.local
+GOOGLE_CLIENT_EMAIL="${GOOGLE_CLIENT_EMAIL}"
+GOOGLE_PRIVATE_KEY="${GOOGLE_PRIVATE_KEY}"
+GOOGLE_SPREADSHEET_ID="${GOOGLE_SPREADSHEET_ID}"
+GOOGLE_DRIVE_FOLDER_ID="${GOOGLE_DRIVE_FOLDER_ID}"
+GEMINI_API_KEY="${GEMINI_API_KEY}"
+EOF
 
 # Set up persistent upload directory
 export UPLOAD_DIR="/data/uploads"
