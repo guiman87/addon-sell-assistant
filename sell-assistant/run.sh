@@ -25,6 +25,16 @@ git clone "${REPOSITORY_URL}" /app/repo
 # Navigate to the app directory
 cd /app/repo
 
+# Set ingress base path if available
+INGRESS_ENTRY=$(bashio::addon.ingress_entry || echo "")
+if [ -n "${INGRESS_ENTRY}" ]; then
+    export NEXT_PUBLIC_BASE_PATH="${INGRESS_ENTRY}"
+    bashio::log.info "Ingress enabled with base path: ${NEXT_PUBLIC_BASE_PATH}"
+else
+    export NEXT_PUBLIC_BASE_PATH=""
+    bashio::log.info "Running without ingress (direct port access)"
+fi
+
 # Create .env.local file from variables
 bashio::log.info "Creating .env.local file..."
 echo "GOOGLE_CLIENT_EMAIL=${GOOGLE_CLIENT_EMAIL}" > .env.local
